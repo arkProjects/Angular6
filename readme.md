@@ -1,15 +1,15 @@
 # Angular Training
-Angular training material for training at [[place]] ([[dates]])
+Angular training material for training at Bangalore (includes Kolkata team) - July 4 - 9)
 
 # About Angular
 Google's Angular framework, is a much sought-after skill today. It helps build Single Page Applications 
 (SPAs) with ease. It is a full-fledged framework that takes care of all aspects of SPA development like templating, data-binding (reactivity), routing and deep-linking etc.
 
 ## Session Schedule
-- Dates and time of training
+- Starts : 10:00 AM every day
 
 ## Link to join the sessions
-[Zoom Meeting Link to join the sessions]()
+[Zoom Meeting Link to join the sessions](https://zoom.us/j/621546378)
 
 ## Capstone Project
 At the end of this bootcamp, you will build a blogging application using Angular. A backend server shall be provided. The app will list blog articles, allow one to post articles, and also edit/delete articles.
@@ -21,7 +21,7 @@ At the end of this bootcamp, you will build a blogging application using Angular
 - HTML, CSS and JavaScript knowledge
 - Very basic algorithms and data structures knowledge (traversing and using arrays, using objects in JavaScript)
 - Bootstrap knowledge is a plus, but not necessary
-__Note__: Knowledge of Angular JS (Angular v1.x) or Angular 2/4 is NOT required.
+__Note__: Knowledge of Angular JS (Angular v1.x) or Angular 2/4 is NOT required for the most part. Final day assumes knowledge of Angular v1.x
 
 ## Software and Tools
 - [VSCode used as IDE (editor) in the session](https://code.visualstudio.com/) - Download and install this. If you prefer another IDE, please continue using it. However, a simple editor like Notepad, or Notepad++ is NOT recommended.
