@@ -16,6 +16,10 @@
                 <li><a [routerLink]="['/products']" [routerLinkActive]="['active']">Product catalog</a></li>
                 <li><a [routerLink]="['/feedback']" [routerLinkActive]="['active']">Feedback</a></li>
             </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a (click)="logout()" *ngIf="isLoggedIn()">Logout</a></li>
+                <li><a [routerLink]="['/login']" *ngIf="!isLoggedIn()">Login</a></li>
+            </ul>
         </div>
     </div>
 </nav>

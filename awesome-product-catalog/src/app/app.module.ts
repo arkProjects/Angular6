@@ -28,7 +28,7 @@ import { LoginComponent } from './login/login.component';
     RouterModule.forRoot([
       { path: 'login', component: LoginComponent },
       { path: 'about', component: AboutComponent },
-      { path: 'feedback', loadChildren: 'app/feedback/feedback.module'},
+      { path: 'feedback', loadChildren: 'src/app/feedback/feedback.module'},
       { path: '**', component: PageNotFoundComponent }
     ])
   ],

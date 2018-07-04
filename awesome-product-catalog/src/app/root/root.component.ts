@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { log } from '../shared/log.decorator';
+import { AuthenticationService } from '../shared/auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +11,7 @@ import { log } from '../shared/log.decorator';
 })
 export class RootComponent implements OnInit {
 
-  constructor() { }
+  constructor( private _router: Router, private _authenticationService: AuthenticationService ) { }
 
   // @log({
   //   name: 'root.component.ts',
@@ -29,4 +31,13 @@ export class RootComponent implements OnInit {
   //   method: 'ngOnDestroy'
   // })
   ngOnDestroy() { }
+
+  logout() {
+    this._authenticationService.logout();
+    this._router.navigate( [ '/login' ] )
+  }
+
+  isLoggedIn() {
+      return this._authenticationService.isLoggedIn();
+  }
 }
