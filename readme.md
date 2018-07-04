@@ -15,7 +15,7 @@ Google's Angular framework, is a much sought-after skill today. It helps build S
 At the end of this bootcamp, you will build a blogging application using Angular. A backend server shall be provided. The app will list blog articles, allow one to post articles, and also edit/delete articles.
 
 ## Video Recordings &amp; Discussion Forum
-[Video recordings of sessions with Discussion forum to post questions]()
+[Video recordings of sessions]()
 
 ## Pre-requisites
 - HTML, CSS and JavaScript knowledge
