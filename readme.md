@@ -11,6 +11,11 @@ Google's Angular framework, is a much sought-after skill today. It helps build S
 ## Link to join the sessions
 [Zoom Meeting Link to join the sessions](https://zoom.us/j/621546378)
 
+## Login credentials for authenticated awesome-product-catalog app
+To start the authenticated app, navigate to the server/ folder and ```npm install```, followed by ```npm run json:server:authenticated``` (if you do not want the login enabled, then run ```npm run json:server``` instead)
+username: john.doe@example.com
+password: password
+
 ## Capstone Project
 At the end of this bootcamp, you will build a blogging application using Angular. A backend server shall be provided. The app will list blog articles, allow one to post articles, and also edit/delete articles.
 
@@ -46,3 +51,4 @@ __Note__: Knowledge of Angular JS (Angular v1.x) or Angular 2/4 is NOT required 
     - [TypeScript language site](https://www.typescriptlang.org/)
     - [Bootstrap 3.3.7 documentation](http://getbootstrap.com/docs/3.3/) - For more information on using Bootstrap v3.3.7
 - [Angular site](https://angular.io/) - Make sure to visit this for more information - do not use documentation for Angular JS v1 which is at angularjs.org
+- [More details on Semver and npm](https://docs.npmjs.com/misc/semver)
