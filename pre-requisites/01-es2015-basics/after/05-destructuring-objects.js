@@ -71,7 +71,8 @@ function foo( { a = 10, b = 20 } = {} ) {
 }
 
 foo({
-    a: 1
+    a: 1,
+    b: 2
 });
 
 foo();
