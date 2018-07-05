@@ -22,4 +22,6 @@
 
     // string assigned only at runtime - yet static type-checking helps catch this
     // Step 1.3 TypeScript's type-inference logic is very robust. Try assigning priceOfGooglePixel to the return value of getPriceOfGooglePixel() - you will not be able to do so.
+
+    priceOfGooglePixel = getPriceOfGooglePixel();
 }());

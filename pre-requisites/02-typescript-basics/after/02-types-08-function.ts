@@ -48,7 +48,7 @@ function ajax( options: { url : string, method : string, success? : (string) => 
 ajax({
     url: '/messages',
     method: 'GET',
-    //  contentType: 'application/json' // not accepted
+    contentType: 'application/json', // not accepted
     success: function( data ) {
         console.log( );
         return 1;
