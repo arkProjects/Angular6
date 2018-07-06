@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductsService } from '../products.service';
 
 import IProduct from '../Product';
 import productsArray from '../products';
@@ -9,19 +10,23 @@ import productsArray from '../products';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-    products: IProduct[];
+    products: any;
     filteredProducts: IProduct[];
     isImageVisible: boolean = true;
     filterKey: string = '';
 
-    constructor() {
+    constructor( private _productsService: ProductsService ) {
         
     }
 
     // called when component has been added to DOM
     ngOnInit() {
-        this.products = productsArray;
-        this.filteredProducts = this.products;
+        this._productsService.getProducts().subscribe(
+            products => {
+                this.products = products;
+                this.filteredProducts = this.products;
+            }
+        );
     }
 
     toggleImage() {
