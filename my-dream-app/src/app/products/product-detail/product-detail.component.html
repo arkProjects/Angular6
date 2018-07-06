@@ -3,8 +3,14 @@
     {{variable}} - interpolation (usually used for text)
     <htmlelement [attribute]="variable" /> -- this syntax is preferred for attributes
     <htmlelement attribute="{{variable or expression}}" />
+    (click)="code to execute"
 -->
-<div class="container margin-top-large">
+
+<div class="container margin-top-large" *ngIf="product">
+    <div class="clearfix">
+        <button class="btn btn-primary pull-left" [routerLink]="['../', product.id - 1]">Previous</button>
+        <button class="btn btn-primary pull-right" [routerLink]="['../', product.id + 1]">Next</button>
+    </div>
     <div class="panel panel-primary">
         <div class="panel-heading">
             {{product.name}}
@@ -34,7 +40,10 @@
                 </p>
 
                 <p class="margin-top-large">
-                    <button class="btn btn-primary">Back to product catalog</button>
+                    <!--
+                    <button class="btn btn-primary" routerLink="/products">Back to product catalog</button>
+                    -->
+                    <button class="btn btn-primary" (click)="navigateToProductList()">Back to product catalog</button>
                 </p>
 
             </div>
