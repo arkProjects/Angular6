@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import productsArray from '../products';
+import IProduct from '../Product';
 
 @Component({
   selector: 'app-product-detail',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit {
+    product : IProduct;
 
-  constructor() { }
+    constructor() { }
 
-  ngOnInit() {
-  }
-
+    ngOnInit() {
+        this.product = productsArray[0];
+    }
 }
