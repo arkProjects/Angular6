@@ -40,7 +40,8 @@
                 <td>{{product.code}}</td>
                 <td>{{product.description | ellipsize:20}}</td>
                 <td>{{product.price | currency:'INR':'symbol':'1.2-2'}}</td>
-                <td>{{product.starRating}}</td>
+                <!--<td>{{product.starRating}}</td>-->
+                <td><app-rating [rating]="product.starRating" (ratingClick)="handleRatingClick( $event )"></app-rating></td>
             </tr>
         </tbody>
     </table>

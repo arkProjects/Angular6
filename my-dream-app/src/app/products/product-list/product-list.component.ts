@@ -15,6 +15,7 @@ export class ProductListComponent implements OnInit {
     filterKey: string = '';
 
     constructor() {
+        
     }
 
     // called when component has been added to DOM
@@ -30,5 +31,9 @@ export class ProductListComponent implements OnInit {
     filterProducts() {
         console.log( this.filterKey );
         this.filteredProducts = this.products.filter( product => product.name.toUpperCase().indexOf( this.filterKey.toUpperCase() ) !== -1 );
+    }
+
+    handleRatingClick( value ) {
+        alert( value );
     }
 }
