@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { ProductListComponent } from './product-list/product-list.component';
 import { SharedModule } from '../shared/shared.module';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
@@ -11,6 +12,7 @@ import { ReviewFormComponent } from './review-form/review-form.component';
   imports: [
     CommonModule,
     SharedModule,
+    FormsModule,
     RouterModule.forChild(
         [
             {

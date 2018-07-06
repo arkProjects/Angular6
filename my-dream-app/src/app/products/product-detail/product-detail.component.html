@@ -1,9 +1,13 @@
 <!--
     Types of data-binding
     {{variable}} - interpolation (usually used for text)
+    
     <htmlelement [attribute]="variable" /> -- this syntax is preferred for attributes
+    
     <htmlelement attribute="{{variable or expression}}" />
     (click)="code to execute"
+
+    [(ngModel)]="variable" - two-way data binding
 -->
 
 <div class="container margin-top-large" *ngIf="product">
