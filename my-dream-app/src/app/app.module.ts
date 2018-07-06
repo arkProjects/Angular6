@@ -32,6 +32,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
                     pathMatch: 'full'
                 },
                 {
+                    path: 'feedback',
+                    loadChildren: 'src/app/feedback/feedback.module'
+                },
+                {
                     path: '**',
                     component: PageNotFoundComponent
                 }

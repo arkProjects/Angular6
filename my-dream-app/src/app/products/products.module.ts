@@ -4,6 +4,8 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { SharedModule } from '../shared/shared.module';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { RouterModule } from '@angular/router';
+import { ReviewsComponent } from './reviews/reviews.component';
+import { ReviewFormComponent } from './review-form/review-form.component';
 
 @NgModule({
   imports: [
@@ -17,12 +19,22 @@ import { RouterModule } from '@angular/router';
             },
             {
                 path: 'products/:id',
-                component: ProductDetailComponent
+                component: ProductDetailComponent,
+                children: [
+                    {
+                        path: '',
+                        component: ReviewsComponent
+                    },
+                    {
+                        path: 'add',
+                        component: ReviewFormComponent
+                    }
+                ]
             }
         ]
     )
   ],
-  declarations: [ProductListComponent, ProductDetailComponent],
+  declarations: [ProductListComponent, ProductDetailComponent, ReviewsComponent, ReviewFormComponent],
   exports: [
       ProductListComponent,
       ProductDetailComponent
