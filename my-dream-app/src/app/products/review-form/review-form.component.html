@@ -1,16 +1,16 @@
 <h2>Give a review</h2>
 <hr />
-<form class="form-horizontal">
+<form class="form-horizontal" (ngSubmit)="submitReview( form.value )" #form="ngForm">
     <div class="form-group">
         <label class="control-label col-sm-3" for="reviewer">Reviewer</label>
         <div class="col-sm-9">
-            <input type="text" id="reviewer" class="form-control" />
+            <input type="text" id="reviewer" name="reviewer" [(ngModel)]="review.reviewer" class="form-control" />
         </div>
     </div>
     <div class="form-group">
         <label class="control-label col-sm-3" for="starRating">Rating</label>
         <div class="col-sm-9">
-            <select id="starRating" class="form-control">
+            <select id="starRating" name="starRating" [(ngModel)]="review.starRating" class="form-control">
                 <option value="">--Select a rating</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -23,13 +23,13 @@
     <div class="form-group">
         <label class="control-label col-sm-3" for="title">Title for your review</label>
         <div class="col-sm-9">
-            <input type="text" id="title" class="form-control" />
+            <input type="text" id="title" name="title" [(ngModel)]="review.title" class="form-control" />
         </div>
     </div>
     <div class="form-group">
         <label class="control-label col-sm-3" for="text">Review</label>
         <div class="col-sm-9">
-            <input type="text" id="text" class="form-control" />
+            <input type="text" id="text" name="text" [(ngModel)]="review.text" class="form-control" />
         </div>
     </div>
     <div class="form-group">
@@ -37,4 +37,7 @@
             <input type="submit" value="Post review" class="btn btn-primary" />
         </div>
     </div>
+
+    {{form.value | json}}
+    {{review | json}}
 </form>
