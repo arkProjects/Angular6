@@ -3,6 +3,7 @@ import productsArray from '../products';
 import IProduct from '../Product';
 
 import { ActivatedRoute, Router } from '@angular/router';
+import { ProductsService } from '../products.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -13,7 +14,7 @@ export class ProductDetailComponent implements OnInit {
     productId: number;
     product : IProduct;
 
-    constructor( private _activatedRoute: ActivatedRoute, private _router: Router ) {
+    constructor( private _activatedRoute: ActivatedRoute, private _router: Router, private _productsService: ProductsService ) {
         console.log( _activatedRoute );
     }
 
@@ -25,7 +26,9 @@ export class ProductDetailComponent implements OnInit {
         this._activatedRoute.paramMap.subscribe(
             params => {
                 this.productId = +params.get( 'id' );
-                this.product = productsArray[this.productId - 1];
+                this._productsService.getProduct( this.productId ).subscribe(
+                    product => this.product = product
+                );
             }
         );
     }

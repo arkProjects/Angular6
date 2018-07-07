@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Debounce demo</title>
+    </head>
+    <body>
+        <input type="search" id="txtSearch" />
+    </body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.2.1/rxjs.umd.js"></script>
+
+    <script>
+        let Observable = Rx.Observable;
+
+        let inputObservable = Observable.fromEvent( document.getElementById( 'txtSearch' ), 'input' );
+
+        inputObservable.debounce( 1000 ).subscribe(
+            event => console.log( event )
+        );
+    </script>
+</html>

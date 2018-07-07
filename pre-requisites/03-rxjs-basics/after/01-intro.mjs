@@ -25,12 +25,12 @@ class MyObserver {
 }
 
 let observer = new MyObserver(); // create an Observer object in order to subscribe to observable
-let subscription = observable.filter( x => ( ( x % 2 ) ? { value : x } : 0 ) ).subscribe( observer ); // you get a subscription object in return
+let subscription = observable.filter( x => x % 2 === 0 ).subscribe( observer ); // you get a subscription object in return
 
 // use the subscription object to unsubscribe the observer after 10 seonds
 setTimeout(function() {
     subscription.unsubscribe();
-}, 10000);
+}, 20000);
 
 // Exercise: Use Observable.from() to create an observable whose payload is set from an array of strings - since the array is one finite length, you will see complete() being triggered at the end of the event stream.
 let array = ['it', 'is', 'a', 'beautiful', 'day' ];

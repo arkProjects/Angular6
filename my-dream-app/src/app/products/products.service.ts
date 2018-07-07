@@ -13,6 +13,10 @@ export class ProductsService {
     constructor( private _httpClient: HttpClient ) { }
 
     getProducts() : Observable<any> {
-        return this._httpClient.get( environment.apiBaseUrl + 'products' ); // an observable with only one event (single HttpResponse)
+        return this._httpClient.get( environment.apiBaseUrl + '/products' ); // an observable with only one event (single HttpResponse)
+    }
+
+    getProduct( id: number ) : Observable<any> {
+        return this._httpClient.get( `${environment.apiBaseUrl}/products/${id}` );
     }
 }
