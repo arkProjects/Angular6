@@ -1,0 +1,101 @@
+<div class="container">
+    <h3>Profile and Settings</h3>
+    <hr/>
+
+    <form class="form-horizontal" (ngSubmit)="save()" [formGroup]="profileAndSettingsForm" novalidate>
+        <div class="form-group" [ngClass]="{ 'has-error': nameInput?.invalid && (nameInput?.dirty || nameInput?.touched) }">
+            <label for="name" class="control-label col-sm-3">Name</label>
+            <div class="col-sm-9">
+                <input type="text" name="name" class="form-control" formControlName="name" />
+            </div>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': emailInputErrorMessage }">
+            <label for="email" class="control-label col-sm-3">Email</label>
+            <div class="col-sm-9">
+                <input type="email" name="email" class="form-control" formControlName="email" />
+                <div *ngIf="emailInputErrorMessage">
+                    {{emailInputErrorMessage}}
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="subscribe" class="control-label col-sm-3">Subscribe to receive offers over email</label>
+            <div class="col-sm-9">
+                <label class="checkbox-inline"><input type="checkbox" id="subscribe" name="subscribe" formControlName="subscribe" (click)="updateSubscription()" /> Yes</label>
+            </div>
+        </div>
+        <div class="form-group" *ngIf="subscribeInput.value">
+            <label for="frequency" class="control-label col-sm-3">How often do you want to receive notifications?</label>
+            <div class="col-sm-9">
+                <label class="radio-inline"><input type="radio" name="frequency" value="daily" formControlName="frequency" /> Daily</label>
+                &nbsp;
+                <label class="radio-inline"><input type="radio" name="frequency" value="weekly" formControlName="frequency" /> Weekly</label>
+                &nbsp;
+                <label class="radio-inline"><input type="radio" name="frequency" value="monthly" formControlName="frequency" /> Monthly</label>
+            </div>
+        </div>
+        <div formArrayName="topics" *ngFor="let topic of topics.controls; let i = index;">
+            <div class="form-group">
+                <label attr.for="{{'topic-' + i}}" class="control-label col-sm-3">Topics you are interested in</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="{{'topic-' + i}}" [formControlName]="i" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-9">
+                <input type="button" (click)="addTopic()" value="Add topic" />
+            </div>
+        </div>
+        <div [formGroup]="finance">
+            <div class="form-group" [ngClass]="{ 'has-error': incomeInput?.invalid && (incomeInput?.dirty || incomeInput?.touched) }">
+                <label for="income" class="control-label col-sm-3">Monthly Income</label>
+                <div class="col-sm-9">
+                    <input type="text" name="income" class="form-control" formControlName="income" />
+                    <div class="text-danger" *ngIf="incomeInput?.invalid && (incomeInput?.dirty || incomeInput?.touched)">
+                        {{incomeInput.errors | json}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div [formGroup]="finance">
+            <div class="form-group" [ngClass]="{ 'has-error': budgetInput?.invalid && (budgetInput?.dirty || budgetInput?.touched) }">
+                <label for="budget" class="control-label col-sm-3">Monthly Budget</label>
+                <div class="col-sm-9">
+                    <input type="text" name="budget" class="form-control" formControlName="budget" />
+                    <div class="text-danger" *ngIf="budgetInput?.invalid && (budgetInput?.dirty || budgetInput?.touched)">
+                        {{budgetInput.errors | json}}
+                    </div>
+                    <div class="text-danger" *ngIf="finance?.invalid">
+                        {{finance.errors | json}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--
+        <div class="form-group">
+            <label for="" class="control-label col-sm-3"></label>
+            <div class="col-sm-9">
+                <input type="text" name="" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="control-label col-sm-3"></label>
+            <div class="col-sm-9">
+                <input type="text" name="" class="form-control" />
+            </div>
+        </div>
+        -->
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-9">
+                <input type="submit" value="Save" class="btn btn-primary" [disabled]="profileAndSettingsForm?.invalid" />
+                &nbsp;&nbsp;
+                <!-- You can use (click)="reset()" as alternative to observing valueChanges -->
+                <input type="button" value="Reset" class="btn btn-default" />
+            </div>
+        </div>
+
+        {{profileAndSettingsForm.value | json}}
+        {{profileAndSettingsForm.errors | json}}
+    </form>
+</div>
