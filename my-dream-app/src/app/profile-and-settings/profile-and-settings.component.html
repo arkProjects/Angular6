@@ -1,0 +1,72 @@
+<div class="container">
+        <h3>Profile and Settings</h3>
+        <hr/>
+    
+        <form class="form-horizontal" [formGroup]="profileAndSettingsForm" novalidate>
+            <div class="form-group">
+                <label for="name" class="control-label col-sm-3">Name</label>
+                <div class="col-sm-9">
+                    <input type="text" name="name" class="form-control" formControlName="name" />
+                    <div *ngIf="nameEl.invalid && (nameEl.dirty || nameEl.touched)" class="text-danger">
+                        Name is invalid
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email" class="control-label col-sm-3">Email</label>
+                <div class="col-sm-9">
+                    <input type="email" name="email" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="subscribe" class="control-label col-sm-3">Subscribe to receive offers over email</label>
+                <div class="col-sm-9">
+                    <label class="checkbox-inline"><input type="checkbox" id="subscribe" name="subscribe" /> Yes</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="frequency" class="control-label col-sm-3">How often do you want to receive notifications?</label>
+                <div class="col-sm-9">
+                    <label class="radio-inline"><input type="radio" name="frequency" value="daily" /> Daily</label>
+                    &nbsp;
+                    <label class="radio-inline"><input type="radio" name="frequency" value="weekly" /> Weekly</label>
+                    &nbsp;
+                    <label class="radio-inline"><input type="radio" name="frequency" value="monthly" /> Monthly</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-3">Topics you are interested in</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-9">
+                    <input type="button" value="Add topic" />
+                </div>
+            </div>
+            <div>
+                <div class="form-group">
+                    <label for="income" class="control-label col-sm-3">Monthly Income</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="income" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="form-group">
+                    <label for="budget" class="control-label col-sm-3">Monthly Budget</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="budget" class="form-control"/>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-9">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                    &nbsp;&nbsp;
+                    <input type="button" value="Reset" class="btn btn-default" />
+                </div>
+            </div>
+        </form>
+    </div>
