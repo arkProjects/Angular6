@@ -21,6 +21,7 @@ At the end of this bootcamp, you will build a blogging application using Angular
 
 ## Video Recordings &amp; Discussion Forum
 [Day 1 - July 4 - Introduction to Angular 6, ES6 and Basic Introduction to TypeScript](https://s3.amazonaws.com/corporate-trainings/eRevMax/angular-july-4-9-2018/july-4-2018.mp4)
+[Day 2 - July 4 - TypeScript and Intoduction to Angular Components and Pipes](https://s3.amazonaws.com/corporate-trainings/eRevMax/angular-july-4-9-2018/july-5-2018.mp4)
 
 ## Pre-requisites
 - HTML, CSS and JavaScript knowledge

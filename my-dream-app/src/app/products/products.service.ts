@@ -16,20 +16,20 @@ export class ProductsService {
     httpOptions = {
         headers: new HttpHeaders({
           'Content-Type':  'application/json',
-          'Authorization': 'my-auth-token'
+          'Authorization': 'Bearer ' + localStorage.getItem( 'authToken' )
         })
     };
 
     getProducts() : Observable<any> {
-        return this._httpClient.get( environment.apiBaseUrl + '/products' ); // an observable with only one event (single HttpResponse)
+        return this._httpClient.get( environment.apiBaseUrl + '/products', this.httpOptions ); // an observable with only one event (single HttpResponse)
     }
 
     getProduct( id: number ) : Observable<any> {
-        return this._httpClient.get( `${environment.apiBaseUrl}/products/${id}` );
+        return this._httpClient.get( `${environment.apiBaseUrl}/products/${id}`, this.httpOptions );
     }
     
     getReviews( id : number ) : Observable<any> {
-        return this._httpClient.get( `${environment.apiBaseUrl}/products/${id}/reviews` );
+        return this._httpClient.get( `${environment.apiBaseUrl}/products/${id}/reviews`, this.httpOptions );
     }
     
     postReview( id : number, review ) : Observable<any> {

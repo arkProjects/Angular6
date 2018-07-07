@@ -16,6 +16,7 @@ export class ProductListComponent implements OnInit {
     filteredProducts: IProduct[];
     isImageVisible: boolean = true;
     filterKey: string = '';
+    color : string = 'lightgray';
 
     productsSubscription: Subscription;
 
