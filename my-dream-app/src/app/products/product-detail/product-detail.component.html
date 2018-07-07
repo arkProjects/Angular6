@@ -8,39 +8,41 @@
     (click)="code to execute"
 
     [(ngModel)]="variable" - two-way data binding
+
+    Use property? for safe navigation
 -->
 
 <div class="container margin-top-large" *ngIf="product">
     <div class="clearfix">
-        <button class="btn btn-primary pull-left" [routerLink]="['../', product.id - 1]">Previous</button>
-        <button class="btn btn-primary pull-right" [routerLink]="['../', product.id + 1]">Next</button>
+        <button class="btn btn-primary pull-left" [routerLink]="['../', product?.id - 1]">Previous</button>
+        <button class="btn btn-primary pull-right" [routerLink]="['../', product?.id + 1]">Next</button>
     </div>
     <div class="panel panel-primary">
         <div class="panel-heading">
-            {{product.name}}
+            {{product?.name}}
         </div>
         <div class="panel-body">
             <div class="col-sm-3">
-                <img [src]="product.imageUrl" class="img-responsive" />
+                <img [src]="product?.imageUrl" class="img-responsive" />
             </div>
             <div class="col-sm-9">
-                <h3>{{product.name}}</h3>
-                <span><app-rating [rating]="product.starRating"></app-rating></span>
+                <h3>{{product?.name}}</h3>
+                <span><app-rating [rating]="product?.starRating"></app-rating></span>
                 
                 <p class="margin-top-large">
-                    Product id: {{product.id}}
+                    Product id: {{product?.id}}
                     <br />
-                    Product code: {{product.code}}
+                    Product code: {{product?.code}}
                     <br />
-                    Released on: {{product.releaseDate}}
+                    Released on: {{product?.releaseDate}}
                 </p>
 
                 <p class="margin-top-large">
-                    {{product.description}}
+                    {{product?.description}}
                 </p>
 
                 <p class="margin-top-large">
-                    Price: {{product.price | currency:'INR':'symbol':'1.2-2'}}
+                    Price: {{product?.price | currency:'INR':'symbol':'1.2-2'}}
                 </p>
 
                 <p class="margin-top-large">

@@ -19,4 +19,8 @@ export class ProductsService {
     getProduct( id: number ) : Observable<any> {
         return this._httpClient.get( `${environment.apiBaseUrl}/products/${id}` );
     }
+    
+    getReviews( id : number ) : Observable<any> {
+        return this._httpClient.get( `${environment.apiBaseUrl}/products/${id}/reviews` );
+    }
 }

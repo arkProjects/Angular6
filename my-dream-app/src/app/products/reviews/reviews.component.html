@@ -1,3 +1,10 @@
-<p>
-  reviews works!
-</p>
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let review of reviews">
+        <app-rating [rating]="review.starRating"></app-rating>
+        <h3>{{review.title}}</h3>
+        <div>
+            By {{review.reviewer}} on {{review.createdDate}}
+        </div>
+        <p>{{review.text}}</p>
+    </li>
+</ul>
