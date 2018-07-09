@@ -58,25 +58,29 @@ export class ProductListComponent implements OnInit, OnDestroy {
   // })
   ngOnChanges() { }
 
+  fetchProducts() {
+    this._productService.getProducts().subscribe(
+        // success method - gets the event payload when the event occurs and is successful
+        response => {
+          this.products = response;
+  
+          this.products.forEach( function( product ) {
+            product['isShortDescription'] = true;
+          });
+      
+          this.filterKey = '';
+        }
+        // error method - gets the error details when an event results in error
+      );
+  }
+
   // @log({
   //   name: 'product-list.component.ts',
   //   method: 'ngOnInit'
   // })
   ngOnInit() {
     // console.log( 'ngOnInit() got called' );
-    this._productService.getProducts().subscribe(
-      // success method - gets the event payload when the event occurs and is successful
-      response => {
-        this.products = response;
-
-        this.products.forEach( function( product ) {
-          product['isShortDescription'] = true;
-        });
-    
-        this.filterKey = '';
-      }
-      // error method - gets the error details when an event results in error
-    );
+    this.fetchProducts();
   }
 
   // @log({

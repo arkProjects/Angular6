@@ -1,0 +1,6 @@
+- Test Ellipsize
+    - Explain describe(), it() and beforeEach(), afterEach()
+- Test ProductListComponent 
+    - Create Spy object with getProducts() and test state updates (products)
+- Test ReviewForm (Interaction Testing)
+    - 
