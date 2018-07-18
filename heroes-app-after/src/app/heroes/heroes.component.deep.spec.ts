@@ -63,7 +63,7 @@ describe( 'HeroesComponent deep tests', () => {
     it( 'should pass on the hero to child HeroCmponents and be set there correctly', () => {
         mockHeroService.getHeroes.and.returnValue(of(HEROES));
 
-        fixture.detectChanges();
+        fixture.detectChanges(); // ngOnInit() gets called
 
         let hcDEs = fixture.debugElement.queryAll( By.directive( HeroComponent ) );
 
@@ -126,7 +126,7 @@ describe( 'HeroesComponent deep tests', () => {
 
         // act
         fixture.debugElement.query( By.css( 'input' ) ).nativeElement.value = newHero.name;
-        fixture.debugElement.query( By.css( 'button' ) ).triggerEventHandler( 'click', null );
+        fixture.debugElement.query( By.css( '#btn-add' ) ).triggerEventHandler( 'click', null ) } );
         fixture.detectChanges();
 
         // assert
