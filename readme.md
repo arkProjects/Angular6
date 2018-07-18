@@ -54,4 +54,8 @@ __Note__: Knowledge of Angular JS (Angular v1.x) or Angular 2/4 is NOT required 
     - [TypeScript language site](https://www.typescriptlang.org/)
     - [Bootstrap 3.3.7 documentation](http://getbootstrap.com/docs/3.3/) - For more information on using Bootstrap v3.3.7
 - [Angular site](https://angular.io/) - Make sure to visit this for more information - do not use documentation for Angular JS v1 which is at angularjs.org
+- [Official videos on Angular on YouTube](https://www.youtube.com/user/angularjs/videos)
 - [More details on Semver and npm](https://docs.npmjs.com/misc/semver)
+- [Using Sass in Angular apps](https://stackoverflow.com/questions/36220256/angular-cli-sass-options)
+- [More details on using Sass in Angular](https://scotch.io/tutorials/using-sass-with-the-angular-cli)
+- [Handling sequential and parallel requests in RxJS](https://coryrylan.com/blog/angular-multiple-http-requests-with-rxjs)
