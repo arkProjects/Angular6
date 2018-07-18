@@ -17,12 +17,16 @@ app.use( session( sess ) );
 app.get( '**', ( req, res ) => {
     const url = req.url;
 
-    if( url === '/en' || url === '/fr' ) {
+    if( url === '/' ) {
+        res.end( 'Hit /en to use app in English, and /hi for Hindi' );
+    }
+
+    if( url === '/en' || url === '/hi' ) {
         if( req.url === '/en' ) {
             req.session.locale = 'en';
             req.session.pathPrefix = 'dist-prod/my-project-' + req.session.locale;
-        } else if( req.url === '/fr' ) {
-            req.session.locale = 'fr';
+        } else if( req.url === '/hi' ) {
+            req.session.locale = 'hi';
             req.session.pathPrefix = 'dist-prod/my-project-' + req.session.locale;
         }
 
@@ -34,10 +38,6 @@ app.get( '**', ( req, res ) => {
     if( locale ) {
         res.sendFile( path.join( __dirname, req.session.pathPrefix, url ) );
     }
-});
-
-app.get( ( req, res ) => {
-    res.end( 'Hit /en to use app in English, and /fr for French' );
 });
 
 app.listen( 8080, err  => {

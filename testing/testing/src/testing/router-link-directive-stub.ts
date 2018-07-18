@@ -1,9 +1,10 @@
-import { Directive, Input } from '@angular/core';
+import { Directive, Input, HostListener } from '@angular/core';
 
 // export for convenience.
 export { RouterLink} from '@angular/router';
 
 /* tslint:disable:directive-class-suffix */
+
 @Directive({
   selector: '[routerLink]',
   host: { '(click)': 'onClick()' }

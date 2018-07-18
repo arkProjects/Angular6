@@ -54,7 +54,7 @@
               "buildOptimizer": true,
               "outputPath": "dist-prod/my-project-en/",
             },
-            "production-fr": {
+            "production-hi": {
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -70,18 +70,18 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "outputPath": "dist-prod/my-project-fr/",
-              "i18nFile": "src/locale/messages.fr.xlf",
+              "outputPath": "dist-prod/my-project-hi/",
+              "i18nFile": "src/locale/messages.hi.xlf",
               "i18nFormat": "xlf",
-              "i18nLocale": "fr",
+              "i18nLocale": "hi",
               "i18nMissingTranslation": "error"
             },
-            "fr": {
+            "hi": {
               "aot": true,
-              "outputPath": "dist/my-project-fr/",
-              "i18nFile": "src/locale/messages.fr.xlf",
+              "outputPath": "dist/my-project-hi/",
+              "i18nFile": "src/locale/messages.hi.xlf",
               "i18nFormat": "xlf",
-              "i18nLocale": "fr",
+              "i18nLocale": "hi",
               "i18nMissingTranslation": "error"
             }
           }
@@ -95,8 +95,8 @@
             "production": {
               "browserTarget": "angular.io-example:build:production"
             },
-            "fr": {
-              "browserTarget": "angular.io-example:build:fr"
+            "hi": {
+              "browserTarget": "angular.io-example:build:hi"
             }
           }
         },
@@ -155,7 +155,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular.io-example:serve:fr"
+            "devServerTarget": "angular.io-example:serve:hi"
           }
         },
         "lint": {

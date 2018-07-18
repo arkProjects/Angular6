@@ -60,5 +60,6 @@ __Note__: Knowledge of Angular JS (Angular v1.x) or Angular 2/4 is NOT required 
 - [Using Sass in Angular apps](https://stackoverflow.com/questions/36220256/angular-cli-sass-options)
 - [More details on using Sass in Angular](https://scotch.io/tutorials/using-sass-with-the-angular-cli)
 - [Handling sequential and parallel requests in RxJS](https://coryrylan.com/blog/angular-multiple-http-requests-with-rxjs)
+- [How flatMap works - aka mergeMap](https://blog.thoughtram.io/rx/2016/08/01/exploring-rx-operators-flatmap.html)
 - [Migrating from AngularJS 1.4 -> 1.5](https://code.angularjs.org/1.5.11/docs/guide/migration#migrating-from-1-4-to-1-5)
 - [Migrating from AngularJS -> Angular](https://angular.io/guide/upgrade)
